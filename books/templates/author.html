@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>An author</title>
+	</head>
+	<body>
+		{{ author.name }}
+		{% for book in author.books.all %}
+			{% if book.review %}
+				<div class="book">
+					<h3>{{ book.title }}</h3>
+					{% if book.is_favourite %}<p class="highlight">favourite</p>{% endif %}
+					<p>{{ book.review|linebreaks }}</p>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</body>
+</html>
+
