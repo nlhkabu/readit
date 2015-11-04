@@ -1,0 +1,207 @@
+/* Generic Rules */
+
+.align-right {
+    text-align: right;
+}
+
+span.highlight {
+    background-color: #333;
+    color: #fff;
+    display: inline-block;
+    padding: 3px 5px 2px 5px;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    border-radius: 2px;
+}
+
+p.meta {
+    font-style: italic;
+}
+
+
+/* Site structure*/
+
+.container {
+    width: 900px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+header {
+    border-bottom: 1px solid #ececec;
+    padding: 20px 0;
+    display: table;
+    width: 100%;
+}
+
+footer {
+    border-top: 1px solid #ececec;
+    padding: 20px 0;
+    margin-top: 60px;
+}
+
+
+/* Header */
+
+.logo {
+    padding-right: 20px;
+    display: table-cell;
+}
+
+.welcome {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    line-height: 1.5;
+}
+
+nav {
+    clear: both;
+    border-bottom: 1px solid #ececec;
+    margin-bottom: 60px;
+}
+
+nav a {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    padding: 15px 20px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: Arial, serif;
+    color: #333;
+}
+
+@media only screen and (max-width: 350px) {
+    nav a {
+        padding: 15px 10px;
+    }
+}
+
+
+/* Content */
+
+.book {
+    border-left: 2px dashed #ececec;
+    padding-left: 20px;
+    margin: 40px 0;
+}
+
+
+/* Typography */
+
+body {
+    font-family: 'Merriweather', serif;
+    color: #333;
+    font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+}
+
+a {
+    color: #44B78B;
+    text-decoration: none;
+}
+
+
+/* Tables */
+
+table {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+table td, th {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #44B78B;
+    color: #fff;
+}
+
+table tr:nth-child(odd){
+    background-color: #ececec;
+}
+
+@media only screen and (max-width: 500px) {
+    thead {
+        display: none;
+    }
+
+    table tr {
+        display: block;
+        padding: 8px 10px;
+    }
+
+    table td {
+        display: block;
+        padding: 3px 0;
+    }
+
+    td.title {
+        font-weight: bold;
+    }
+
+    td.align-right {
+        text-align: left;
+    }
+}
+
+
+/* Forms */
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 10px 0;
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+    border: 0;
+    background-color: #44B78B;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-family: arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: block;
+    width: 300px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-error {
+    margin-top: 20px;
+}
+
+.form-error span,
+.non-field-errors span {
+    background-color: #d70000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 2px;
+    font-family: arial, sans-serif;
+}
