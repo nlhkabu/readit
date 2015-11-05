@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Books pending review</h1>
+	
+	{% if books %}
+		<table>
+			<thead>
+				<th>Title &amp; Author</th>
+				<th class="align-right">Action</th>
+			</thead>
+			<tbody>
+				{% for book in books %}
+					<tr>
+						<td class="title">
+							{{ book.title }} by {{ book.list_authors }}
+						</td>
+						<td class="align-right">
+							<a href="{% url 'review-book' book.pk %}">Review</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		<p>There are no books waiting to be reviewed.  Good job!</p>
+	{% endif %}
+{% endblock %}
