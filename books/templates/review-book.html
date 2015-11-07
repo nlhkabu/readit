@@ -4,7 +4,33 @@
 	<h1>Review <em>{{ book.title }}</em> by <em>{{ book.list_authors }}</em></h1>
 	<form method="post">
 		{% csrf_token %}
-		{{ form.as_p }}
+
+		{% if form.non_field_errors %}
+			<div class="non-field-errors">
+				{% for error in form.non_field_errors %}
+					<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+		<label>
+			{{ form.is_favourite }} {{ form.is_favourite.label}}
+		</label>
+		<p><em>{{ form.is_favourite.help_text }}</em></p>
+
+		<div>
+			<label>{{ form.review.label }}</label>
+			{{ form.review }}
+		</div>
+
+		{% if form.review.errors %}
+			<div class="form-error">
+				{% for error in form.review.errors %}
+					<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% endif %}
+
 		<input type="submit" value="Submit Review">
 	</form>
 {% endblock %}

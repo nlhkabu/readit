@@ -30,7 +30,39 @@
 	
 	<form method="post">
 		{% csrf_token %}
-		{{ form.as_p }}
+
+		{% if form.non_field_errors %}
+			<div class="non-field-errors">
+				{% for error in form.non_field_errors %}
+					<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+		<label>{{ form.title.label }}</label>
+		{{ form.title }}
+		{{ form.title.help_text }}
+
+		{% if form.title.errors %}
+			<div class="form-error">
+				{% for error in form.title.errors %}
+					<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+		<label>{{ form.authors.label }}</label>
+		{{ form.authors }}
+		{% if form.authors.errors %}
+			<div class="form-error">
+				{% for error in form.authors.errors %}
+					<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+		<p>Can't find the author you're looking for? <a href="{% url 'add-author' %}">Create a New Author</a></p>
+
 		<input type="submit" value="Add Book">
 	</form>
 	
