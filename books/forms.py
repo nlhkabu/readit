@@ -26,7 +26,7 @@ class ReviewForm(forms.Form):
 class BookForm(forms.ModelForm):
 	class Meta:
 		model = Book
-		fields = ['title', 'authors']
+		fields = ['title', 'authors', 'reviewed_by']
 		
 	def clean(self):
 		# Super the clean method to maintain main validation and error messages
