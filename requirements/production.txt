@@ -1,0 +1,5 @@
+-r base.txt
+
+psycopg2==2.5.3
+uWSGI==2.0.7
+dj-database-url==0.3.0
